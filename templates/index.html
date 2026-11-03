@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stored XSS Demonstration</title>
+</head>
+<body>
+
+    <h1>Comment Application</h1>
+
+    <form method="POST">
+        <textarea
+            name="comment"
+            placeholder="Enter your comment..."
+            rows="4"
+            cols="50"
+            required
+        ></textarea>
+
+        <br><br>
+
+        <button type="submit">Submit Comment</button>
+    </form>
+
+    <hr>
+
+    <h2>Comments</h2>
+
+    {% for comment in comments %}
+        <div>
+            {{ comment["content"] }}
+        </div>
+        <hr>
+    {% endfor %}
+
+</body>
+</html>
